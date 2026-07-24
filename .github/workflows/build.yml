@@ -20,13 +20,13 @@ jobs:
           java-version: '17'
 
       - name: Grant execute permission for gradlew
-        run: chmod +x gradlew
+        run: chmod +x VirtualApp/gradlew
 
       - name: Build with Gradle
-        run: ./gradlew assembleDebug
+        run: cd VirtualApp && ./gradlew assembleDebug
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
           name: virtualapp-debug
-          path: '**/build/outputs/apk/**/*.apk'
+          path: 'VirtualApp/**/build/outputs/apk/**/*.apk'
