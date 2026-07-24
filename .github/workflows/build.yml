@@ -21,13 +21,13 @@ jobs:
 
       - name: Install NDK
         run: |
-          echo "y" | ${ANDROID_HOME}/cmdline-tools/latest/bin/sdkmanager --install "ndk;21.4.7075529"
-          ls -la ${ANDROID_HOME}/ndk/21.4.7075529 || echo "NDK KURULUMU BAŞARISIZ"
+          echo "y" | ${ANDROID_HOME}/cmdline-tools/latest/bin/sdkmanager --install "ndk;16.1.4479499"
+          ls -la ${ANDROID_HOME}/ndk/16.1.4479499 || echo "NDK KURULUMU BAŞARISIZ"
 
       - name: Create local.properties with NDK path
         run: |
           echo "sdk.dir=${ANDROID_HOME}" > VirtualApp/local.properties
-          echo "ndk.dir=${ANDROID_HOME}/ndk/21.4.7075529" >> VirtualApp/local.properties
+          echo "ndk.dir=${ANDROID_HOME}/ndk/16.1.4479499" >> VirtualApp/local.properties
           cat VirtualApp/local.properties
 
       - name: Set up JDK 8 (for old Gradle build)
